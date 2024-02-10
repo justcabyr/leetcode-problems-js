@@ -6,7 +6,7 @@
 var mergeAlternately = function (word1, word2) {
   let i = 0;
   let j = 0;
-  let combinedLength = word1.length + word2.length - 1;
+  let combinedLength = Math.max(word1.length, word2.length);
   let result = [];
 
   while (combinedLength > 0) {
