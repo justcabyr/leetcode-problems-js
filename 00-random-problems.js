@@ -55,3 +55,41 @@ function reverse(str) {
 
   console.log(reverse(string));
 }
+
+/*
+  Write a function that will take a string as an input and check whether or not that string is a palindrome
+  It should return true if it is one, and false if it is't.
+  
+  
+*/
+
+const isPalindrome = (str) => {
+  return str === str.split('').reverse().join('') ? true : false;
+};
+
+
+// // From class
+// const isPalindromeFor = (str) => {
+//   let reversed = '';
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     reversed += str[i];
+//   }
+
+//   return str === reversed ? true : false;
+// };
+
+// // From class
+// const isPalindrome = (word) => {
+//   let wordArr = word.split('');
+//   let isPalindrome = true;
+
+//   for (let i = 0; i < Math.ceil(wordArr.length / 2); i++) {
+//     if (wordArr[i] !== wordArr[wordArr.length - 1 - i]) {
+//       isPalindrome = false;
+//       break;
+//     }
+//   }
+
+//   return isPalindrome;
+// };
+
