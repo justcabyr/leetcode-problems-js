@@ -33,3 +33,25 @@ function evenOdd(array) {
   }
   return res;
 }
+
+/*
+  Create a function that reverses the words in a string that are greater than 5
+  
+  input = "The violent cow is eating"
+  output = "The tneloiv cow is gnitae"
+  
+*/
+
+function reverse(str) {
+  reverse = (str) => {
+    let arr = str.split(' ');
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].length >= 5) {
+        arr[i] = arr[i].split('').reverse().join('');
+      }
+    }
+    return arr.join(' ');
+  };
+
+  console.log(reverse(string));
+}
