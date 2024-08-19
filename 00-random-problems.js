@@ -67,7 +67,6 @@ const isPalindrome = (str) => {
   return str === str.split('').reverse().join('') ? true : false;
 };
 
-
 // // From class
 // const isPalindromeFor = (str) => {
 //   let reversed = '';
@@ -93,3 +92,36 @@ const isPalindrome = (str) => {
 //   return isPalindrome;
 // };
 
+/*
+  Given two strings ransomNote and magazine, return true if ransomNote can be 
+  constructed by using the letters from magazine and false otherwise.
+  Each letter in magazine can only be used once in ransomNote.
+
+  Input: ransomNote = “aa”, magazine = “ab”
+  Output: false
+
+  Input: ransomNote = “aa”, magazine = “aab”
+  Output: true
+*/
+
+/*
+Pseudo:
+for each letter in ransom note check to see if it is in magazine, 
+if it is continue and remove the letter from magazine. 
+If it is not, return false
+*/
+
+function ransomNote(ransomNote, magazine) {
+  let ransomNoteArr = ransomNote.split('');
+  let magazineArr = magazine.split('');
+
+  for (let i = 0; i < ransomNoteArr.length; i++) {
+    if (magazineArr.includes(ransomNoteArr[i])) {
+      let remove = magazine.indexOf(ransomNoteArr[i]);
+      magazineArr.splice(remove, 1);
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
